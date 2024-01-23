@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section id="shopping-list">
+        <h1>{{ header }}</h1>
+        <p>{{ body }}</p>
+        <div class="choice-box">
+            <input v-model="selectedText" />
+            <select name="textType" id="textType" @change="updateText">
+                <option value="">--Please choose an option--</option>
+                <option value="Header">Header</option>
+                <option value="Body">Body</option>
+                <option value="Footer">Footer</option>
+            </select>
+        </div>
+        <h4>{{ footer }}</h4>
+    </section>
+    <script src="https:unpkg.com/vue@3"></script>
+    <script>
+        const shoppingList = Vue.createApp({
+            data() {
+                return {
+                    header: "Vue is leuk to learn!",
+                    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    footer: "This is a footer",
+                    selectedText: ""
+                };
+            },
+            methods: {
+                updateText(event) => {
+                    switch (this.selectedText) {
+                        case "Header":
+                            this.header = event.target.value;
+                            break;
+                        case "Body":
+                            this.body = event.target.value;
+                            break;
+                        case "Footer":
+                            this.footer = event.target.value;
+                            break;
+                    }
+                }}}{}
+            
+        }).mount("#shopping-list");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Shopping List App</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<section id="shopping-list">
+
+		<div class="choice-box" >
+			<textarea v-model="selectedText" type="text" minlength="10" maxlength="40" required
+				placeholder="Enter new text"></textarea>
+			<div class="radio-container">
+				<input class="btn" type="radio" id="header" value="Header" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="header">Header</label>
+				<input class="btn" type="radio" id="body" value="Body" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="body">Body</label>
+				<input class="btn" type="radio" id="footer" value="Footer" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="footer">Footer</label>
+				<button @click="updateText" class="btn">Update Content</button>
+			</div>
+		</div>
+		<div class="content">
+    <div>
+        <label>
+            <input type="radio" v-model="selectedType" value="Header">
+            Header
+        </label>
+        <h1 @click="handleSelectionAndUpdating('Header', header)">{{ header }}</h1>
+    </div>
+    <div>
+        <label>
+            <input type="radio" v-model="selectedType" value="Body">
+            Body
+        </label>
+        <p @click="handleSelectionAndUpdating('Body', body)">{{ body }}</p>
+    </div>
+    <div>
+        <label>
+            <input type="radio" v-model="selectedType" value="Footer">
+            Footer
+        </label>
+        <h4 @click="handleSelectionAndUpdating('Footer', footer)">{{ footer }}</h4>
+    </div>
+    <div>
+        <input type="text" v-model="selectedText">
+        <button @click="updateText">Update Content</button>
+    </div>
+</div>
+	</section>
+	<script src="https://unpkg.com/vue@3"></script>
+	<script src="app.js"></script>
+</body>
+
+</html>

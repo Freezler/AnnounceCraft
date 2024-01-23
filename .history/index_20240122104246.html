@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Shopping List App</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<section id="shopping-list">
+		<h1>{{ header }}</h1>
+		<p>{{ body }}</p>
+		<h4>{{ footer }}</h4>
+		<class="choice-box ">
+			<textarea v-model="selectedText" type="text" /></>
+			<div class="radio-container">
+				<input class="btn" type="radio" id="header" value="Header" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="header">Header</label>
+				<input class="btn" type="radio" id="body" value="Body" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="body">Body</label>
+				<input class="btn" type="radio" id="footer" value="Footer" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="footer">Footer</label>
+				<button @click="updateText" class="btn">Update Content</button>
+			</div>
+		</div>
+	</section>
+	<script src="https://unpkg.com/vue@3"></script>
+	<script src="app.js"></script>
+</body>
+
+</html>

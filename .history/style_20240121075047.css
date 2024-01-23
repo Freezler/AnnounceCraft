@@ -1,0 +1,14 @@
+body {
+    background-color: hsla(255, 100%, 10%, 0.9);
+    color: azure;
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h1:hover {
+        color: hsla(255, 46%, 69%, 0.9);
+        transition: all 0.5s;
+    }
+
+}

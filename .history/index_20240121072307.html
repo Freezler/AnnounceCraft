@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+</head>
+
+<body>
+    <div id="shopping-list">
+        <h1>{{ Header}}</h1>
+        <input v-model="Header" type="text">
+    </div>
+    <script src="https:unpkg.com/vue@3"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    Header: "Vue is ready to party!"
+                }
+            }
+        })
+            .mount('#shopping-list');
+    </script>
+</body>
+
+</html>

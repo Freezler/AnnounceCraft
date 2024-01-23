@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section id="shopping-list">
+        <div class="content-box">
+            <h1>{{ Header}}</h1>
+            <p>{{ body }}</p>
+            <h4>{{ footer }}</h4>
+        </div>
+        <div class="choice-box">
+            input
+        </div>
+    </section>
+    <script src="https:unpkg.com/vue@3"></script>
+    <script>
+        const shoppingList = Vue.createApp({
+            data() {
+                return {
+                    Header: "Vue leuk om te leren!",
+                    body: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    footer: "Dit is een footer"
+                };
+            },
+        }).mount("#shopping-list");
+    </script>
+</body>
+
+</html>

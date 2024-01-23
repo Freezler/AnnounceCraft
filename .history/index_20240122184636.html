@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Paper Announcement App</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<section id="shopping-list">
+
+		<div class="content">
+			<img src="https://icons8.com/icon/OfoCfG4ytZsS/gloss-paper" alt="paper" si>
+			<h1 @click="updateSelectedType('Header'); updateSelectedText(header)">{{ header }}</h1>
+			<hr>
+			<p @click="updateSelectedType('Body'); updateSelectedText(body)">{{ body }}</p>
+			<hr>
+			<h4 @click="updateSelectedType('Footer'); updateSelectedText(footer)">{{ footer }}</h4>
+		</div>
+		<div class="choice-box">
+			<textarea v-model="selectedText" type="text" minlength="10" maxlength="400" required
+				placeholder="Enter new text"></textarea>
+			
+			<div class="radio-container">
+				<input class="btn" type="radio" id="header" value="Header" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="header">Header</label>
+				<input class="btn" type="radio" id="body" value="Body" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="body">Body</label>
+				<input class="btn" type="radio" id="footer" value="Footer" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="footer">Footer</label>
+				<div class="btn-group">
+					<button @click="updateText" class="btn">Update</button>
+					<button @click="updateText" class="btn">Print</button>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<script src="https://unpkg.com/vue@3"></script>
+	<script src="app.js"></script>
+</body>
+
+</html>

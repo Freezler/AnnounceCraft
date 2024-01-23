@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Shopping List App</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<section id="shopping-list">
+
+		<div class="choice-box" style="background-image: url('https://images.unsplash.com/photo-1617575521317-d2974f3b56d2?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)>
+			<textarea v-model="selectedText" type="text" minlength="10" maxlength="40" required
+				placeholder="Enter new text"></textarea>
+			<div class="radio-container">
+				<input class="btn" type="radio" id="header" value="Header" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="header">Header</label>
+				<input class="btn" type="radio" id="body" value="Body" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="body">Body</label>
+				<input class="btn" type="radio" id="footer" value="Footer" v-model="selectedType"
+					@change="updateTempContent">
+				<label for="footer">Footer</label>
+				<button @click="updateText" class="btn">Update Content</button>
+			</div>
+		</div>
+		<div class="content">
+			<h1>{{ header }}</h1>
+			<p>{{ body }}</p>
+			<h4>{{ footer }}</h4>
+		</div>
+	</section>
+	<script src="https://unpkg.com/vue@3"></script>
+	<script src="app.js"></script>
+</body>
+
+</html>
